@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <title>ConCal</title>
+</head>
+
+<body>
+    <p> 
+    	<h1 style="color:red"> Welcome {{user}} </h1>
+    	<h2> Mark all your favourite competitve coding websites </h2>
+    	<form method="post">
+    		{% csrf_token %}
+	    	{% for website in WEBSITES %}
+	    		<div class="form-check">
+		    		<input class="form-check-input" type="checkbox" id={{website}} name="websites" value={{website}}>
+		    		<label for={{website}}> {{website}} </label>
+		    	</div>
+	    	{% endfor %}
+	    	<br>
+	    	<button type="submit"> Add to your Google Calendar </button>
+	    </form> 
+    </p>
+</body>
+
+</html>
